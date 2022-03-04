@@ -1,0 +1,28 @@
+html,body{
+  height:100%;
+  width:100%;
+}
+
+body{
+  background-color:black !important;
+  /* get rid of scrollbar */
+  scrollbar-color: transparent transparent;
+}
+.App {
+  text-align: center;
+}
+
+:root {
+  --default-font: #008000;
+  --default-background: #000000;
+  --default-title: #ffffff;
+  --default-titleBackground:#383838;
+  --default-pagebackground: #151a24;
+}
+[data-theme="dark"]{
+  --default-font: #008000;
+  --default-background: #000000;
+  --default-title: #ffffff;
+  --default-titleBackground:#383838;
+  --default-pagebackground: #151a24;
+}

@@ -1,0 +1,247 @@
+.link{
+	color:white;
+}
+.lab1{
+	color:white;
+}
+.access-form{
+	border-radius:20px;
+	width:300px;
+	text-align:center;
+}
+
+.newTerminalBtn{
+	position:absolute;
+	top:0;
+	right:0;
+	left:0;
+	height:auto;
+	width:120px;
+
+	z-index: 99999;
+}
+
+
+
+.accessFail{
+	color:white;
+}
+/* .terminal-center-client{
+	position:relative;
+} */
+/* .terminal-center{
+	display:flex;
+	flex-flow: row wrap;
+	justify-content:center;
+	text-align:center;
+	align-items:center;
+	width:100%;
+	height:100vh;
+	position:absolute;
+  } */
+
+
+/* top:calc(100vh / 1.5); */
+/* right:calc(100vw / 1.1); */
+.terminal-center{
+	display:flex;
+	/* flex-flow: row wrap; */
+	/* height:100%; */
+	height:100vh;
+	width:100%;
+	justify-content: center;
+	align-items:center;	
+	/* transform: translate(-50%, -530%); */
+	position:absolute;
+	/* z-index: -99999; */
+}
+.terminal-client{
+	border-radius:20px;
+	min-width:400px;
+	width:400px;
+	min-height:260px;
+	resize: both;
+	overflow: auto;
+	position:absolute;
+	z-index: 99;
+}
+.terminal-content{
+	min-width:400px;
+	min-height:200px;
+	/* margin-left:20px; */
+	height:calc(100% - 58px); /* this keeps the content matches the resize div from terminal-center - Quite awesome */
+	background-color:var(--default-background);
+	word-break: break-all;
+	overflow-y:auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+	/* overflow: auto; */
+	/* padding-left:10px; */
+}
+
+.terminal-client:focus{
+	box-shadow: 0px 5px 20px 0px #888888;
+}
+.terminal-content -webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+	display: none !important;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+#terminal-success{
+	color:green;
+}
+#terminal-fail{
+	color:red;
+}
+#terminal-normal{
+	color:white;
+}
+.terminal-text{
+	height:10px !Important;
+}
+.objectterm{
+	bottom:0;
+}
+.terminal-form{
+	background-color: black;
+	color:white;
+	max-width:100%;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+.terminal-directory-and-terminal-input{
+	display:inline-block;
+	padding-left:10px;
+	padding-bottom:10px;
+	/* max-width:100%; */
+	overflow:hidden;
+	/* white-space: nowrap; */
+}
+
+.terminal-textarea {
+	background-color: none !important;
+	background:none !important;
+	border:none !important;
+	resize: none !important;
+	color:white;
+	caret-color: transparent;
+	width: 20px;
+	height: 18px;
+	margin-top:3px;
+	margin-left:10px;
+	overflow-y:none !important;
+	overflow:none !important;
+}
+.terminal-textarea:focus{
+	border:none !important;
+	box-shadow: none !important;
+	background-color: none !important;
+	outline: none !important;
+}
+
+
+
+/* old input text */
+.terminal-input {
+	color:white;
+	border:none !important;
+	background-color:var(--default-background);
+	opacity:0;
+	max-width:100%;
+	max-height:100%;
+	position:absolute;
+	/* white-space: pre-wrap !important; 
+	word-wrap: break-word !important; 
+	word-break: break-all !important; */
+}
+.terminal-input:focus{
+	opacity:0;
+	box-shadow: none !important;
+	border:none !important;
+	color:white;
+	background-color: var(--default-background);
+	caret-color:transparent !important;
+}
+
+#cursor{
+	white-space: normal;
+	width:9px;
+	height:16px;
+	margin-top:5px;
+	background-color:white !important;
+	z-index:99;
+	-webkit-animation: flickerAnimation 1.5s infinite;
+	-moz-animation: flickerAnimation 1.5s infinite;
+	-o-animation: flickerAnimation 1.5s infinite;
+	 animation: flickerAnimation 1.5s infinite;
+}
+
+@keyframes flickerAnimation {
+	0%   { opacity:1; }
+	50%  { opacity:0; }
+	100% { opacity:1; }
+  }
+  @-o-keyframes flickerAnimation{
+	0%   { opacity:1; }
+	50%  { opacity:0; }
+	100% { opacity:1; }
+  }
+  @-moz-keyframes flickerAnimation{
+	0%   { opacity:1; }
+	50%  { opacity:0; }
+	100% { opacity:1; }
+  }
+  @-webkit-keyframes flickerAnimation{
+	0%   { opacity:1; }
+	50%  { opacity:0; }
+	100% { opacity:1; }
+  }
+
+.terminal-typing-input{
+	word-break:break-all;
+	text-align: left;
+	margin-left:2px;
+	overflow:auto;
+	max-width:100%;
+}
+
+
+
+.writeContent {
+	padding-left:10px;
+	padding-right:10px;
+	background-color: black;
+	overflow: hidden; /* Ensures the content is not revealed until the animation */
+	/*border-right: .15em solid orange; */ /* The typwriter cursor */
+	/* Keeps the content on a single line */
+	white-space: normal; 
+	/* word-break:break-all; */
+	text-align: left;
+	width:100%;
+	/*margin: 0 auto; */ /* Gives that scrolling effect as the typing happens */
+	/*letter-spacing: .15em; */ /* Adjust as needed */
+	/* animation: 
+	  typing 3.5s steps(40, end); */
+  }
+.terminalfont{
+	color: var(--default-font);
+}
+#errorMsg{
+	color:red !important;
+}
+  /* The typing effect */
+  @keyframes typing {
+	from { width: 0 }
+	to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  /* @keyframes blink-caret {
+	from, to { border-color: transparent }
+	50% { border-color: orange; }
+  } */
