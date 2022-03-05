@@ -5,7 +5,7 @@ https://htmlterminal.com
 ## ABOUT
 HTML-Terminal is front-end component written in React TypeScript. It is designed to mimic a linux terminal / powershell & command prompt. 
 <br/>
-Currently this terminal handles commands through an API request which will then displayed the desired result from a back-end source.
+Currently this terminal handles commands through an API request which will then display the desired result from a back-end source.
 
 ## TODO
 Add socket.io 
