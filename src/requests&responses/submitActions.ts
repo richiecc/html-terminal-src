@@ -6,7 +6,7 @@ import { IConfigHeaders } from '../interfaces/interfaces';
 export const terminalCommand = (command: string, token: string, terminal: number, directoryPath: string) => (dispatch: Function, getState: Function) => {
     const body = JSON.stringify({command,token,terminal,directoryPath});
     axios
-    .post('https://shamich.com/api/command', body, tokenConfig(getState))
+    .post('https://example.com/api/', body, tokenConfig(getState))
     .then((res) => {
         dispatch({
             type: SET_SUCCESS,
