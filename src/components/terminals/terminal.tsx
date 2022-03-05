@@ -22,7 +22,7 @@ const Terminal = ({terminalnode, data, error, terminalCommand, clearErrors}: ITe
     const [directoryPath, setDirectoryPath] = useState('');
     const [defaultPath] = useState(':~'); // default path changes to this :~/ when its in a different directory from default
 
-	const [terminal, setTerminal] = useState([{id:'terminal',content:userPath+defaultPath+directoryPath+'$ Welcome to your terminal.'},{id:'terminal',content:userPath+defaultPath+directoryPath+'$ Please create your user or login.'}]);
+	const [terminal, setTerminal] = useState([{id:'terminal',content:'Welcome to your HTML Terminal.'},{id:'terminal',content:'The back-end source is in its very early stages of development. So bare with me.'},{id:'terminal',content:'Please create your user or login.'},{id:'terminal',content:'Example: adduser username'}]);
     const [token,setToken] = useState('');
     const [spanText,setSpanText] = useState(userPath+defaultPath+directoryPath+'$ ');
     const enterCommand = (e: any) => {
@@ -127,34 +127,34 @@ const Terminal = ({terminalnode, data, error, terminalCommand, clearErrors}: ITe
     const TerminalClientFrag = (
         <Fragment>
             {redirectNow ? <Redirect to={directoryPath}push/>: null}
-                <TerminalContent ref={holderRef}>
-                    {/* d-flex justify-content-start */}
-                    {terminal ? terminal.map((data: any, i: any)=>(
-                        <div id={data.id} className="writeContent terminalfont" key={i} dangerouslySetInnerHTML={{__html: data.content}}></div>
-                    )): null}	
-                </TerminalContent>
-                <TerminalForm onSubmit={enterCommand}>
-                    <TerminalDisplayHolder className="d-flex justify-content-start">
-                        <input 
-                            ref={inputRef}
-                            type="text"
-                            autoComplete="off" 
-                            id="terminal-input"
-                            className="terminal-input"
-                            value={input}
-                            autoCapitalize='off'
-                            aria-autocomplete="none"
-                            autoCorrect="false"
-                            onChange={inputCommandText}
-                        />
-                        <TerminalTypingInput ref={terminalRef}>
-                            {spanText ? spanText.split("").map((data,i)=>(
-                                <span key={i}>{data === " " ? <span dangerouslySetInnerHTML={{__html: '&nbsp'}}></span> : data}</span>
-                            )): null}
-                        </TerminalTypingInput>
-                        <div ref={cursorRef} id="cursor"></div>
-                    </TerminalDisplayHolder>
-                </TerminalForm>		
+            <TerminalContent ref={holderRef}>
+                {/* d-flex justify-content-start */}
+                {terminal ? terminal.map((data: any, i: any)=>(
+                    <div id={data.id} className="writeContent terminalfont" key={i} dangerouslySetInnerHTML={{__html: data.content}}></div>
+                )): null}	
+            </TerminalContent>
+            <TerminalForm onSubmit={enterCommand}>
+                <TerminalDisplayHolder className="d-flex justify-content-start">
+                    <input 
+                        ref={inputRef}
+                        type="text"
+                        autoComplete="off" 
+                        id="terminal-input"
+                        className="terminal-input"
+                        value={input}
+                        autoCapitalize='off'
+                        aria-autocomplete="none"
+                        autoCorrect="false"
+                        onChange={inputCommandText}
+                    />
+                    <TerminalTypingInput ref={terminalRef}>
+                        {spanText ? spanText.split("").map((data,i)=>(
+                            <span key={i}>{data === " " ? <span dangerouslySetInnerHTML={{__html: '&nbsp'}}></span> : data}</span>
+                        )): null}
+                    </TerminalTypingInput>
+                    <div ref={cursorRef} id="cursor"></div>
+                </TerminalDisplayHolder>
+            </TerminalForm>		
         </Fragment>
     )
     return(
